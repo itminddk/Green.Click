@@ -1,0 +1,25 @@
+div.gcm-form-opening-hours-day-wrapper * {
+    float: left;
+    margin-right: 10px;
+}
+
+div.gcm-form-opening-hours-spacer {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+div.gcm-form-opening-hours-day {
+    width: 80px;
+}
+
+input.gcm-form-opening-hours-first, input.gcm-form-opening-hours-second {
+    width: 125px;
+}
+
+div.gcm-form-opening-hours-day, div.gcm-form-opening-hours-input-spacer {
+    margin-top: 15px;
+}
+
+div.gcm-form-opening-hours-day-wrapper:first-of-type {
+    margin-top: 10px;
+}

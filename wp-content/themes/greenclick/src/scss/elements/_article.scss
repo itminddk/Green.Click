@@ -1,0 +1,62 @@
+/*-----------------------------------*\
+  Article
+\*-----------------------------------*/
+
+
+.social {
+	width: 30px;
+	height: 30px;
+	@include font-size(11);
+
+	color: $white;
+
+	text-decoration: none;
+	border-radius: 50%;
+
+	transition: all $speed ease;
+
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 30px;
+		height: 30px;
+
+		@include font-size(11);
+		text-decoration: none;
+		line-height: 0;
+
+		color: $white;
+		cursor: pointer;
+
+		transition: all $speed ease;
+	}
+
+	&:hover {
+		transform: scale(1.1);
+	}
+
+	@include bp(lg) {
+		width: 40px;
+		height: 40px;
+
+		@include font-size(15);
+
+		a {
+			height: 40px;
+			width: 40px;
+
+			@include font-size(15);
+		}
+	}
+
+	// &--twitter {
+	// 	background-color: $twitter;
+	// }
+	&--facebook {
+		background-color: $facebook;
+	}
+	&--linkedin {
+		background-color: $linkedin;
+	}
+}

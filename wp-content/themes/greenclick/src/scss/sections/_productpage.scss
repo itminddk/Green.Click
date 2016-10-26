@@ -1,0 +1,113 @@
+/*-----------------------------------*\
+  Product page styling
+\*-----------------------------------*/
+
+
+.productpage {
+	&-red {
+		.nav-phone {
+			color: $red-light;
+		}
+		.navigation--primary {
+			background-color: $red;
+
+			a.button {
+				background-color: $red-dark;
+				border-color: $red-dark;
+			}
+		}
+		.navigation--social ul li a .icon {
+			color: $red;
+		}
+		.product-page .section--grid .block--main {
+			background-color: $red;
+		}
+		.section--grid .button {
+			color: $red;
+		}
+	}
+	&-green {
+		.nav-phone {
+			color: $green-light;
+		}
+		.navigation--primary {
+			background-color: $green;
+
+			a.button {
+				background-color: $green-dark;
+				border-color: $green-dark;
+			}
+		}
+		.navigation--social ul li a .icon {
+			color: $green;
+		}
+		.product-page .section--grid .block--main {
+			background-color: $green;
+		}
+		.section--grid .button {
+			color: $green;
+		}
+	}
+	&-blue {
+		.nav-phone {
+			color: $blue-light;
+		}
+		.navigation--primary {
+			background-color: $blue;
+
+			a.button {
+				background-color: $blue-dark;
+				border-color: $blue-dark;
+			}
+		}
+		.navigation--social ul li a .icon {
+			color: $blue;
+		}
+		.product-page .section--grid .block--main {
+			background-color: $blue;
+		}
+		.section--grid .button {
+			color: $blue;
+		}
+	}
+	&-yellow {
+		.nav-phone {
+			color: $yellow-light;
+		}
+		.navigation--primary {
+			background-color: $yellow;
+
+			a.button {
+				background-color: $yellow-dark;
+				border-color: $yellow-dark;
+			}
+		}
+		.navigation--social ul li a .icon {
+			color: $yellow;
+		}
+		.product-page .section--grid .block--main {
+			background-color: $yellow;
+		}
+		.section--grid .button {
+			color: $yellow;
+		}
+	}
+}
+
+
+.product-page {
+	.block--main {
+
+		@include bp(xl) {
+            padding: 100px 100px 60px;
+			justify-content: flex-start;
+
+            .whale {
+                margin-top: 70px;
+            }
+			.button {
+				margin-top: auto;
+			}
+        }
+	}
+}

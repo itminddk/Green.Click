@@ -1,0 +1,56 @@
+{
+    "key": "group_56d80d7662210",
+    "title": "Product Sub Page Color",
+    "fields": [
+        {
+            "key": "field_56d80d7c218bc",
+            "label": "Color Theme",
+            "name": "productpage-color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "productpage-red": "Red",
+                "productpage-yellow": "Yellow",
+                "productpage-green": "Green",
+                "productpage-blue": "Blue"
+            },
+            "default_value": [
+                "green"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-product-subpage.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1457347102
+}

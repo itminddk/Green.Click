@@ -1,0 +1,8 @@
+input.gcm-form-field-text.postal {
+    width: 33%;
+    margin-right: 5px;
+}
+
+input.gcm-form-field-text.city {
+    width: 66%;
+}

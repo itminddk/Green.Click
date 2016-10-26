@@ -1,0 +1,198 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: GCM CRM API\n"
+"POT-Creation-Date: 2014-10-10 10:06+0100\n"
+"PO-Revision-Date: 2014-10-10 10:06+0100\n"
+"Last-Translator: Bo Andersen <boa@greenclickmedia.dk>\n"
+"Language-Team: Green Click Media <info@greenclickmedia.dk>\n"
+"Language: da_DK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.9\n"
+"X-Poedit-Basepath: ../\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: classes/GCM_CRM_API.php:60
+msgid "Invalid request method"
+msgstr "Invalid type forespørgsel"
+
+#: classes/GCM_CRM_API.php:73 classes/GCM_CRM_API.php:89
+msgid "Invalid checksum"
+msgstr "Forkert checksum"
+
+#: classes/GCM_CRM_API.php:114 classes/GCM_CRM_API.php:202
+#: classes/GCM_CRM_API.php:289 classes/GCM_CRM_API.php:330
+msgid "Invalid response format"
+msgstr "Ugyldigt svar format"
+
+#: classes/GCM_CRM_API.php:126
+msgid "The requested method does not exist"
+msgstr "Den forespurgte metode findes ikke"
+
+#: classes/GCM_CRM_API.php:139
+msgid "No form type specified"
+msgstr "Ingen form type defineret"
+
+#: classes/GCM_CRM_API.php:161
+msgid "Go back"
+msgstr "Gå tilbage"
+
+#: classes/GCM_CRM_API.php:162
+msgid "Continue to next step"
+msgstr "Gå videre til næste trin"
+
+#: classes/GCM_CRM_API.php:165
+msgid ""
+"An error occurred on the server, or a connection could not be established"
+msgstr ""
+"Der skete en fejl på serveren, eller en forbindelse kunne ikke oprettes"
+
+#: classes/GCM_CRM_API.php:166
+msgid "The response format from the server is invalid"
+msgstr "Svar formatet fra serveren er invalidt"
+
+#: classes/GCM_CRM_API.php:205
+msgid "Could not contact remote server"
+msgstr "Kunne ikke kontakte serveren"
+
+#: classes/GCM_CRM_API.php:210
+msgid "The form could not be rendered"
+msgstr "Formularen kunne ikke renderes"
+
+#: classes/GCM_CRM_API.php:258 classes/GCM_CRM_API.php:296
+msgid "Invalid parameters provided"
+msgstr "Invalide parametre"
+
+#: classes/GCM_CRM_API.php:268 classes/GCM_CRM_API.php:306
+msgid "Access for this page is denied for crawlers"
+msgstr "Adgang til denne side er nægtet for crawlere"
+
+#: classes/GCM_CRM_API.php:280
+msgid "Thank you! Your order has been confirmed."
+msgstr "Tak! Din ordre er nu bekræftet."
+
+#: classes/GCM_CRM_API.php:282 classes/GCM_CRM_API.php:286
+msgid "The order could not be confirmed"
+msgstr "Ordren kunne ikke bekræftes"
+
+#: classes/GCM_CRM_API.php:320
+msgid "The form submission could not be found"
+msgstr "Ordrebekræftelsen kunne ikke findes"
+
+#: classes/GCM_CRM_API.php:321
+msgid "This form submission cannot be displayed"
+msgstr "Ordrebekræftelsen kan ikke vises"
+
+#: classes/GCM_CRM_API.php:322
+msgid "An unknown error occurred"
+msgstr "Der skete en ukendt fejl"
+
+#: classes/GCM_CRM_AbstractField.php:77 classes/GCM_CRM_Form.php:87
+#: classes/GCM_CRM_Form.php:88
+msgid "Oops"
+msgstr "Ups"
+
+#: classes/GCM_CRM_Form.php:77
+msgid "Send order confirmation"
+msgstr "Send ordrebekræftelse"
+
+#: classes/GCM_CRM_Form.php:87
+msgid ""
+"Some fields could not be validated. Please review the validation errors and "
+"try again."
+msgstr ""
+"Nogle felter kunne ikke valideres. Gennemse venligst fejlene og prøv igen."
+
+#: classes/GCM_CRM_Form.php:88
+msgid ""
+"Errors occurred while submitting your request. Please contact the developers."
+msgstr ""
+"Der opstod en eller flere fejl da din forespørgsel blev behandlet. Kontakt "
+"venligst udviklerne."
+
+#: classes/GCM_CRM_Form.php:91
+msgid "Page"
+msgstr "Side"
+
+#: classes/field_adapters/special/GCM_CRM_AdGroupsLanding.php:28
+msgid "Enter ad group"
+msgstr "Indtast annoncegruppe"
+
+#: classes/field_adapters/special/GCM_CRM_AdGroupsLanding.php:33
+msgid "Enter landing page"
+msgstr "Indtast landing page"
+
+#: classes/field_adapters/special/GCM_CRM_AdGroupsLanding.php:38
+msgid "Enter search term"
+msgstr "Indtast søgeord"
+
+#: classes/field_adapters/special/GCM_CRM_AdGroupsLanding.php:40
+msgid "Remove"
+msgstr "Slet"
+
+#: classes/field_adapters/special/GCM_CRM_AdGroupsLanding.php:45
+msgid "Add ad group, landing page and search term"
+msgstr "Tilføj annoncegruppe, landing page og søgeord"
+
+#: classes/field_adapters/special/GCM_CRM_Address.php:19
+msgid "Address"
+msgstr "Adresse"
+
+#: classes/field_adapters/special/GCM_CRM_Address.php:20
+msgid "Postal"
+msgstr "Postnummer"
+
+#: classes/field_adapters/special/GCM_CRM_Address.php:21
+msgid "City"
+msgstr "By"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:23
+msgid "Breaks are included in the opening hours"
+msgstr "Åbningstider er inkl. pauser"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:27
+msgid "Monday"
+msgstr "Mandag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:29
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:39
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:49
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:59
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:69
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:79
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:89
+msgid "and"
+msgstr "og"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:37
+msgid "Tuesday"
+msgstr "Tirsdag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:47
+msgid "Wednesday"
+msgstr "Onsdag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:57
+msgid "Thursday"
+msgstr "Torsdag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:67
+msgid "Friday"
+msgstr "Fredag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:77
+msgid "Saturday"
+msgstr "Lørdag"
+
+#: classes/field_adapters/special/GCM_CRM_OpeningHours.php:87
+msgid "Sunday"
+msgstr "Søndag"
+
+#~ msgid "Oops!"
+#~ msgstr "Ups!"
+
+#~ msgid "Submit form"
+#~ msgstr "Indsend skema"

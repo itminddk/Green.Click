@@ -1,0 +1,2544 @@
+/*-----------------------------------*\
+Front
+\*-----------------------------------*/
+
+// html.js-menu-open,
+// html.js-package-open,
+// html.js-model-open,
+// html.js-health-open,
+body.js-menu-open,
+body.js-package-open,
+body.js-model-open,
+body.js-health-open {
+	overflow: hidden;
+	height: 100%;
+}
+
+body.js-menu-open .hamburger.is-active {
+	position: fixed;
+
+	@include bp(xl) {
+		position: relative;
+	}
+}
+@include bp(md) {
+	body.js-menu-open {
+		overflow: auto;
+	}
+}
+
+.site-content,
+.header__inner {
+	transition: transform .5s ease;
+}
+
+body.js-menu-open .site-content,
+body.js-menu-open .header__inner {
+	transform: translateX(-25%);
+
+	@include bp(md) {
+		transform: none;
+	}
+}
+
+main {
+	max-width: 1600px;
+	width: 100%;
+	margin: 0 auto;
+
+	background-color: $white;
+}
+
+section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	a[href^=tel] {
+		color: inherit;
+	}
+}
+
+
+section .container {
+	max-width: 800px;
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+
+	text-align: center;
+}
+
+.section {
+	background-color: $white;
+
+	// Sizes
+	&--burj {
+		padding-top: 60px;
+		padding-bottom: 60p x;
+
+		@include bp(lg) {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+		@include bp(xl) {
+			padding-top: 100px;
+			padding-bottom: 100px;
+		}
+	}
+
+	&--empire {
+		padding-top: 30px;
+		padding-bottom: 30px;
+
+		@include bp(lg) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@include bp(xl) {
+			padding-top: 80px;
+			padding-bottom: 80px;
+		}
+	}
+
+	&--eiffel {
+		@include bp(xl) {
+			padding-top: 60px;
+			padding-bottom: 60px;
+		}
+	}
+
+	&--liberty {
+		@include bp(xl) {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+	}
+
+	// Typograhy
+	.whale {
+		margin-bottom: 20px;
+
+		@include bp(md) {
+			margin-bottom: 30px;
+		}
+
+		color: $blue;
+
+		&--green {
+			color: $green;
+		}
+		&--white {
+			color: $white;
+		}
+		&--black {
+			color: $black;
+		}
+	}
+
+	// Colors
+	&--red {
+		background-color: $red;
+		color: $white;
+	}
+	&--green {
+		background-color: $green;
+		color: $white;
+	}
+	&--orange {
+		background-color: $orange;
+		color: $white;
+
+		.whale {
+			color: $white;
+		}
+	}
+	&--blue {
+		background-color: $blue;
+		color: $white;
+
+		.whale {
+			color: $white;
+		}
+	}
+	&--grey {
+		background-color: $grey;
+		color: $white;
+
+		.whale {
+			color: $blue;
+		}
+	}
+	&--grey-alt {
+		background-color: $grey-alt;
+		color: $black;
+
+		// .whale {
+		// 	color: $black;
+		// }
+	}
+
+
+	// Special overrides
+	&--npb { // No padding bottom
+		padding-bottom: 0;
+
+		@include bp(sm) { padding-bottom: 0; }
+		@include bp(md) { padding-bottom: 0; }
+		@include bp(lg) { padding-bottom: 0; }
+		@include bp(xl) { padding-bottom: 0; }
+		@include bp(hg) { padding-bottom: 0; }
+	}
+
+	&--image-bottom {
+		img {
+			max-width: 800px;
+			width: 100%;
+			padding: 70px 10px 0;
+		}
+	}
+}
+
+
+.section .block-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	max-width: 1280px; // Making up for 40px padding between blocks
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+// TODO: THIS IS AN ELEMENT.. Move me
+/*
+* .block is our primary content element, used mainly in grids and inside sections.
+* --modifiers change the properties of the block, and may affect child elements.
+* When sections are used without block elements, they are meant to be full width.
+* TODO: Is the second line true?
+*/
+.block {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	position: relative;
+
+	padding: 20px;
+	height: auto;
+
+	color: $white;
+
+	@include bp(md) {
+		padding: 40px;
+
+		height: 600px; // NOTE: This changes on each parent section type (blog or casestory in section)
+	}
+
+	// Elements inside of blocks that act independently
+	.button {
+		display: inline-flex;
+		align-self: flex-start; // Don't fill the block
+	}
+
+	// Overrides default font-family of lists
+	ul {
+		font-family: $font-body;
+	}
+
+	span {
+		@include font-size(15);
+		font-weight: $weight-bold;
+	}
+
+
+	@include bp(md) {
+		span {
+			@include font-size(17);
+		}
+	}
+	@include bp(xl) {
+		flex: 1 0 auto;
+		width: 50%;
+	}
+
+	.premium {
+		position: absolute;
+		bottom: 40px;
+		right: 40px;
+
+		img {
+			width: 200px;
+		}
+	}
+}
+
+// Standard block modifiers
+
+/*
+* The main block element, always used in the top left
+* This block element also hides the navigation.
+* It can be extended with -front to not grab all the attention
+*/
+.block--main {
+	padding: 120px 30px 0;
+	// justify-content: center;
+	text-align: center;
+	min-height: 400px;
+	height: auto;
+
+	z-index: 10;
+
+	.button { // Override button alignment in blocks
+		align-self: center;
+	}
+	.button-group {
+		margin-left: -10px;
+		margin-right: -10px;
+		margin-bottom: 20px;
+	}
+	.button-group .button {
+		display: flex;
+	}
+
+	> svg {
+		margin: 0 auto -12px;
+		max-width: 320px;
+		width: 100%;
+
+		@media all and (min-width: 360px) {
+			margin-bottom: -14px;
+		}
+	}
+
+	.whale {
+		// margin-bottom: 10px;
+
+		color: $white;
+	}
+
+	&-front {
+		padding: 120px 20px 120px;
+		justify-content: center;
+		text-align: left;
+
+		h1,
+		p {
+			margin-bottom: 20px;
+		}
+		h1 {
+			width: 90%;
+			@include font-size(33);
+			line-height: 39px;
+		}
+
+		p:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	&-front-second {
+
+		.magnet-people {
+			position: absolute;
+			top: 100px;
+			left: 0;
+			right: 0;
+			bottom: -100px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			z-index: 1;
+		}
+
+		.button {
+			z-index: 2;
+
+
+			color: $blue;
+		}
+
+		svg {
+			max-width: 400px;
+			width: 400px;
+		}
+	}
+	@include bp(md) {
+		padding: 160px 100px 0;
+
+		&-front {
+			padding: 40px;
+
+			p {
+				@include font-size(19);
+			}
+		}
+	}
+	@include bp(xl) {
+		padding: 120px 100px;
+
+		&-front {
+			padding: 120px 40px 40px;
+		}
+	}
+}
+
+.section--grid:not(.section--grid-big) {
+	.block {
+		height: auto;
+
+		@include bp(xl) {
+			height: 400px;
+
+			&.block--list {
+				height: 400px;
+			}
+
+			&.block--bg-image {
+				height: 400px;
+			}
+		}
+	}
+}
+
+/*
+* For background images that can't overflow the block
+* This requires an inline image style on the .block element.
+*/
+.block--bg-image {
+	background-position: 50%;
+	background-size: cover;
+
+	height: 300px;
+
+	// For buttons inside
+	&-button {
+		align-items: center;
+		justify-content: center;
+
+		.button {
+			align-self: center;
+		}
+	}
+
+	@include bp(md) {
+		flex: 1;
+	}
+	@include bp(lg) {
+		height: 600px;
+	}
+	@include bp(xl) {
+		flex: 1 0 auto;
+		width: 50%;
+	}
+
+
+
+
+}
+
+// Used when a image (i.e. logo) should be positioned inside a block
+.block--image {
+	align-items: center;
+	justify-content: center;
+}
+
+.block--quote {
+	@include bp(md) {
+		padding: 60px 40px;
+	}
+
+	.button {
+		margin-top: 0;
+		align-self: center;
+	}
+}
+
+.block--center {
+	align-items: center;
+}
+
+.quote {
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	width: 100%;
+
+	text-align: center;
+
+	@include bp(md) {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+}
+
+.block--sub {
+	justify-content: space-between;
+	position: relative;
+}
+
+// Has a list of items
+.block--list {
+	ul {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 0;
+	}
+	li {
+		margin-right: 20px;
+	}
+	li:before { // Overrides default list styling
+		content: '';
+		margin: 0;
+	}
+	li p,
+	li strong {
+		@include font-size(17);
+	}
+	li p {
+		margin-bottom: 10px;
+	}
+	li a {
+		@include font-size(14);
+		font-weight: $weight-bold;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		color: $white;
+
+		&:visited {
+			color: $white;
+		}
+
+		&.button {
+			margin-top: auto;
+		}
+	}
+
+	&__content {
+		p {
+			max-width: 400px;
+			width: 100%;
+		}
+	}
+
+	@include bp(md) {
+		ul {
+			flex-direction: row;
+		}
+	}
+	@include bp(hg) {
+		p {
+			max-width: 550px;
+		}
+	}
+}
+
+.section--accordion {
+	.block {
+		flex-direction: column;
+		height: auto;
+	}
+	.block__column {
+		width: 100%;
+
+		p {
+			color: $black;
+		}
+
+		@include bp(md) {
+			flex: 1 0 auto;
+			width: 50%;
+		}
+	}
+
+	.question {
+		padding-top: 20px;
+		padding-bottom: 20px;
+
+		border-top: 1px solid $grey-border;
+		border-bottom: 1px solid $grey-border;
+
+		&:before {
+			display: none;
+		}
+
+		&:not(:last-of-type) {
+			border-bottom: none;
+		}
+
+		a {
+			display: flex;
+
+			text-decoration: none;
+
+			&:focus {
+				outline: none;
+			}
+		}
+
+		.collapse {
+			display: none;
+		}
+	}
+	.question__title {
+		display: flex;
+		width: 100%;
+	}
+
+	.question__title p {
+		color: $green;
+		display: flex;
+		width: 100%;
+
+		&:after {
+			content: '›';
+			margin-left: auto;
+			float: right;
+		}
+	}
+
+	.answer {
+		margin-top: 20px;
+	}
+	.answer p {
+		color: $black;
+	}
+
+	@include bp(md) {
+		.block {
+			flex-direction: row;
+		}
+	}
+}
+
+.section--features .features {
+	display: flex;
+	flex-direction: column;
+
+	.block {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		height: auto;
+	}
+
+	@include bp(md) {
+		flex-flow: row wrap;
+
+		.block {
+			flex: 0 1 auto;
+			width: 50%;
+		}
+	}
+	@include bp(lg) {
+		.block {
+			flex: 0 1 auto;
+			width: 33.3333%;
+		}
+	}
+}
+
+// Branch specific section$$
+.section--branch {
+	text-align: center;
+
+	.button {
+		color: $white;
+		align-self: center;
+	}
+	.container p {
+		margin-bottom: 50px;
+	}
+	.block {
+		strong {
+			margin-bottom: 10px;
+			color: $black;
+		}
+	}
+}
+.section--branch.section--visual {
+	text-align: left;
+
+	.button {
+		align-self: flex-start;
+	}
+}
+
+
+// Special block modifiers
+.block--case {
+	height: 250px;
+
+	&.block--sub {
+		img {
+			align-self: flex-start;
+		}
+	}
+}
+
+
+// Grid
+.section--grid {
+	display: flex;
+	flex-direction: column;
+
+	// Changing height of block elements in the grid
+	// 600px is default for all pages but front where 500px is default
+	&-small {
+		.block {
+			height: 400px;
+		}
+	}
+	&-big {
+		.block--main {
+			min-height: 330px;
+			padding-bottom: 30px;
+		}
+	}
+	@include bp(md) {
+		&-big {
+			.block--main {
+				min-height: 500px;
+				height: 500px;
+			}
+
+			.whale {
+				margin-top: auto;
+			}
+			p {
+				margin-bottom: auto;
+			}
+		}
+	}
+
+	@include bp(xl) {
+		flex-flow: row wrap;
+
+		&-big {
+			.block--main {
+				height: 600px;
+				padding-bottom: 100px;
+			}
+		}
+	}
+}
+
+// Used on Adwords, SEO and Platforms templates exclusively
+.section--adwords,
+.section--seo,
+.section--platforms {
+	.block {
+		position: relative;
+		justify-content: center;
+
+		.button-group .button {
+			display: flex;
+		}
+
+		.whale {
+			width: 100%;
+		}
+
+		@include bp(xl) {
+			padding: 100px;
+			justify-content: flex-start;
+
+			.whale,
+			.button {
+				margin-top: auto;
+			}
+		}
+	}
+	.block .button {
+		align-self: center;
+		z-index: 4;
+	}
+
+	svg {
+		max-width: 300px;
+		width: 300px;
+
+		@include bp(xl) {
+			max-width: 380px;
+			width: 380px;
+		}
+	}
+	// Show magnet-people outside of flow
+	.magnet-people {
+		position: absolute;
+		bottom: -60px;
+		left: 0;
+		right: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include bp(xl) {
+			top: 480px;
+			bottom: -150px;
+		}
+	}
+}
+
+// Used on Adwords template exclusively
+.section--adwords {
+	.block--bullseye {
+		min-height: 225px;
+		height: 225px;
+
+		@include bp(lg) {
+			min-height: 225px;
+		}
+
+		@include bp(xl) {
+			height: 600px;
+		}
+	}
+
+	svg.bullseye {
+		margin: 0 auto;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 4;
+
+		@include bp(xl) {
+			// top: auto;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+}
+
+// Used on SEO template exclusively
+.section--seo {
+	.block--seo {
+		min-height: 225px;
+		height: 225px;
+
+		@include bp(lg) {
+			min-height: 225px;
+		}
+
+		@include bp(xl) {
+			height: 600px;
+		}
+	}
+
+	.seo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		max-width: 200px;
+		width: 100%;
+		margin: 0 auto;
+
+		@include bp(xl) {
+			max-width: 300px;
+			width: 300px;
+		}
+	}
+}
+
+// Used on Platforms template exclusively
+.section--platforms {
+	.block--pin {
+		min-height: 225px;
+		height: 225px;
+		align-items: center;
+		justify-content: center;
+
+		@include bp(lg) {
+			min-height: 225px;
+		}
+
+		@include bp(xl) {
+			height: 600px;
+		}
+	}
+
+	.pin {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		max-width: 150px;
+		width: 100%;
+		margin: 0 auto;
+
+		@include bp(xl) {
+			max-width: 260px;
+			top: -60px;
+		}
+	}
+}
+
+
+.section--health {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	overflow: hidden;
+	//
+	// .container {
+	// 	position: relative;
+	// }
+
+	.health-svg {
+		// position: absolute;
+		// bottom: -50px;
+		max-width: 400px;
+		width: 400px;
+		margin-top: 30px;
+		margin-bottom: -125px;
+	}
+
+	@include bp(md) {
+		min-height: 400px;
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+
+.section--references {
+	padding-top: 50px;
+	padding-bottom: 50px;
+	flex-flow: row wrap;
+	position: relative;
+
+	span {
+		position: absolute;
+		top: 20px;
+		left: 20px;
+
+		font-weight: $weight-bold;
+	}
+
+	.block {
+		max-height: 250px;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		padding: 30px;
+		flex: 1 0 auto;
+		width: 50%;
+	}
+
+	@include bp(md) {
+
+		.block img {
+			max-width: 200px;
+		}
+
+		span {
+			top: 40px;
+			left: 40px;
+		}
+
+		.block {
+			max-height: 100%;
+			padding: 40px;
+			flex: 0 1 auto;
+			width: 25%;
+		}
+		.block:nth-of-type(n+3) {
+			display: flex;
+		}
+	}
+}
+.section--more-references {
+	padding-left: 20px;
+	padding-right: 20px;
+
+	span {
+		margin-bottom: 20px;
+
+		@include font-size(15);
+		font-weight: $weight-bold;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+
+		color: $blue;
+	}
+
+	.references {
+		display: flex;
+		flex-flow: row wrap;
+		max-width: calc(1000px - 20px); // -20px to make it equal to the results width (has 10px margins around content)
+		width: 100%;
+		position: relative;
+		margin-top: 1px;
+		margin-left: 1px;
+	}
+	.reference {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 160px;
+		flex: 1 0 auto;
+		width: 50%;
+		padding: 20px;
+		margin-left: -1px;
+		margin-top: -1px;
+
+		border: 1px solid #ededed;
+	}
+	.border-override {
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		right: 0;
+		bottom: 0;
+		border: 1px solid $white;
+	}
+
+	.reference:nth-of-type(n+8) {
+		display: none;
+	}
+
+	@include bp(md) {
+		.reference {
+			flex: 1 0 25%;
+		}
+		.reference:nth-of-type(n+8) {
+			display: flex;
+		}
+	}
+}
+
+.section--grid.section--posts {
+	@include bp(md) {
+		flex-flow: row wrap;
+	}
+	.block {
+		padding: 0;
+		height: 200px;
+	}
+
+	h1,
+	p {
+		font-family: $font-body;
+		position: relative;
+
+		z-index: 15;
+	}
+	h1 {
+		font-weight: $weight-bold;
+	}
+
+	a {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		position: relative;
+		height: 100%;
+		padding: 20px;
+
+		text-decoration: none;
+
+		color: $white;
+
+		&:before {
+			content: '';
+
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+
+			z-index: 10;
+			background: linear-gradient(to bottom,  rgba(0,0,0,0) 50%,rgba(0,1,1,.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		}
+	}
+
+	@include bp(md) {
+		.block {
+			height: 400px !important;
+			flex: 1 0 auto;
+			width: 50%;
+		}
+		a {
+			padding: 40px;
+		}
+	}
+}
+
+.section--case {
+	flex-direction: row;
+
+	background-size: cover;
+	background-position: 50%;
+
+	.block {
+		height: auto;
+	}
+
+	.block:nth-of-type(n+2) {
+		display: none;
+	}
+
+	@include bp(md) {
+		.block {
+			height: 400px;
+		}
+	}
+
+	@include bp(lg) {
+		.block {
+			height: 600px;
+		}
+		.block:nth-of-type(n+2) {
+			display: flex;
+		}
+	}
+}
+
+.section--products {
+	display: flex;
+
+	.block {
+		display: flex;
+		flex: 1;
+		text-align: center;
+		padding: 40px;
+	}
+	.whale {
+		color: $white;
+	}
+	.wheat {
+		max-width: 400px;
+		width: 100%;
+		margin: 0 auto;
+		margin-bottom: 40px;
+	}
+	img {
+		align-self: center;
+		margin-bottom: 20px;
+	}
+	.button {
+		align-self: center;
+	}
+
+	&__blue {
+		.block {
+			background-color: $blue;
+		}
+		.block:nth-of-type(2) {
+			background-color: $blue-dark;
+		}
+		.block:nth-of-type(3) {
+			background-color: $blue;
+		}
+		.block:nth-of-type(4) {
+			background-color: $blue-dark;
+		}
+	}
+	&__green {
+		.block {
+			background-color: $green;
+		}
+		.block:nth-of-type(2) {
+			background-color: $green-dark;
+		}
+		.block:nth-of-type(3) {
+			background-color: $green;
+		}
+		.block:nth-of-type(4) {
+			background-color: $green-dark;
+		}
+	}
+	&__red {
+		.block {
+			background-color: $red;
+		}
+		.block:nth-of-type(2) {
+			background-color: $red-dark;
+		}
+		.block:nth-of-type(3) {
+			background-color: $red;
+		}
+		.block:nth-of-type(4) {
+			background-color: $red-dark;
+		}
+	}
+	&__yellow {
+		.block {
+			background-color: $yellow;
+		}
+		.block:nth-of-type(2) {
+			background-color: $yellow-dark;
+		}
+		.block:nth-of-type(3) {
+			background-color: $yellow;
+		}
+		.block:nth-of-type(4) {
+			background-color: $yellow-dark;
+		}
+	}
+
+	.block--product.green {
+		background-color: $green;
+	}
+	.block--product.blue {
+		background-color: $blue;
+	}
+	.block--product.red {
+		background-color: $red;
+	}
+	.block--product.yellow {
+		background-color: $yellow;
+	}
+
+	@include bp(md) {
+		flex-flow: row wrap;
+
+		.block {
+			height: auto;
+			min-height: 400px;
+		}
+
+		.button {
+			margin-top: auto;
+		}
+
+		&__blue {
+			.block {
+				background-color: $blue;
+			}
+			.block:nth-of-type(2) {
+				background-color: $blue-dark;
+			}
+			.block:nth-of-type(3) {
+				background-color: $blue-dark;
+			}
+			.block:nth-of-type(4) {
+				background-color: $blue;
+			}
+		}
+		&__green {
+			.block {
+				background-color: $green;
+			}
+			.block:nth-of-type(2) {
+				background-color: $green-dark;
+			}
+			.block:nth-of-type(3) {
+				background-color: $green-dark;
+			}
+			.block:nth-of-type(4) {
+				background-color: $green;
+			}
+		}
+		&__red {
+			.block {
+				background-color: $red;
+			}
+			.block:nth-of-type(2) {
+				background-color: $red-dark;
+			}
+			.block:nth-of-type(3) {
+				background-color: $red-dark;
+			}
+			.block:nth-of-type(4) {
+				background-color: $red;
+			}
+		}
+		&__yellow {
+			.block {
+				background-color: $yellow;
+			}
+			.block:nth-of-type(2) {
+				background-color: $yellow-dark;
+			}
+			.block:nth-of-type(3) {
+				background-color: $yellow-dark;
+			}
+			.block:nth-of-type(4) {
+				background-color: $yellow;
+			}
+		}
+		.block--product.green {
+			background-color: $green;
+		}
+		.block--product.blue {
+			background-color: $blue;
+		}
+		.block--product.red {
+			background-color: $red;
+		}
+		.block--product.yellow {
+			background-color: $yellow;
+		}
+	}
+	@include bp(md) {
+		.block {
+			width: 50%;
+		}
+	}
+}
+
+.section--facts {
+	.block {
+		height: 250px;
+		align-items: center;
+		justify-content: center;
+
+		text-align: center;
+
+		p {
+			width: 100%;
+		}
+	}
+
+	.icon {
+		margin-bottom: 25px;
+
+		@include font-size(75);
+	}
+
+	p {
+		span {
+			@extend h1;
+			display: block;
+		}
+	}
+
+	.button {
+		align-self: center;
+	}
+
+	@include bp(md) {
+		.block {
+			height: 400px;
+			padding-left: 100px;
+			padding-right: 100px;
+		}
+		.icon {
+			margin-bottom: 30px;
+
+			@include font-size(100);
+		}
+	}
+}
+
+.section--fullwidth {
+
+	.block {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		height: auto;
+
+		color: $black;
+	}
+
+	.block__column {
+		padding: 20px;
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+
+		.subtitle:after {
+			margin: 30px 0;
+		}
+
+		img {
+			flex: 0 0 auto;
+		}
+	}
+
+	ul {
+		display: flex;
+		flex-direction: column;
+	}
+	ul li {
+		flex: 1 0 auto;
+
+		@extend .wheat;
+	}
+
+	@include bp(lg) {
+
+		.block {
+			flex-direction: row-reverse;
+		}
+
+		.block__column {
+			padding: 0 40px;
+		}
+	}
+
+	&-text {
+		.block {
+			flex-direction: column;
+		}
+		.block__column {
+			padding-top: 40px;
+			padding-bottom: 40px;
+		}
+		@include bp(lg) {
+			.block {
+				flex-direction: row;
+			}
+			.block__column {
+				padding-top: 0;
+				padding-bottom: 0;
+			}
+		}
+	}
+}
+
+.section--no-margin {
+	.block__column--text {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+
+		order: 1;
+	}
+	.block__column--image {
+		order: 2;
+	}
+
+	// .block-container {
+	// 	height: 100%;
+	// }
+
+	@include bp(lg) {
+		.block__column--text {
+			order: 2;
+		}
+		.block__column--image {
+			order: 1;
+		}
+	}
+}
+
+.section--video {
+
+	.block {
+		flex-direction: column;
+	}
+
+	.block__column--video {
+		margin-top: auto;
+		margin-bottom: auto;
+		order: 1;
+	}
+	.block__column--image {
+		order: 2;
+	}
+
+	@include bp(lg) {
+		.block {
+			flex-direction: row;
+			align-items: center;
+		}
+		.block__column--video {
+			order: 1;
+		}
+		.block__column--image {
+			order: 2;
+		}
+	}
+}
+
+.section--features {
+	p {
+		color: $black;
+	}
+	.button {
+		color: $white;
+	}
+
+	&.section--orange {
+		strong,
+		p {
+			color: $white;
+		}
+	}
+	&.section--white {
+		.whale {
+			color: $green;
+		}
+		strong {
+			color: $green;
+		}
+		p {
+			color: $black;
+		}
+	}
+	&.section--grey-alt {
+		strong {
+			color: $black;
+		}
+	}
+}
+
+.section--model {
+	svg {
+		margin-top: 50px;
+		width: 100%;
+		padding-left: 20px;
+		padding-right: 20px;
+
+		@include bp(md) {
+			padding-left: 40px;
+			padding-right: 40px;
+		}
+
+		@include bp(lg) {
+			padding: 0;
+			max-width: 950px;
+			width: 950px;
+			height: 380px;
+		}
+	}
+
+	.model__overlay {
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+
+		background-color: $white;
+		overflow: scroll;
+
+		transform: translateY(100%);
+		transition: transform .5s ease;
+
+		z-index: 1000;
+
+		&.is-active {
+			top: 0; // Fixes Safari iOS bug showing overlay on scroll
+			transform: translateY(0);
+		}
+
+		.overlay__navigation {
+			display: none;
+		}
+
+		.overlay__header {
+			max-width: 700px;
+			width: 100%;
+			margin: 0 auto;
+			position: relative;
+			transform: translateY(100px);
+		}
+
+		.overlay__content {
+			max-width: 600px;
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			position: relative;
+			overflow: hidden;
+
+			ul {
+				list-style: none;
+				display: flex;
+				position: relative;
+
+				margin-bottom: 10px;
+
+				transition: transform $speed ease;
+
+				li {
+					flex: 1 0 100%;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+
+			.whale {
+				font-family: $font-body;
+			}
+
+			strong {
+				display: block;
+				margin-bottom: 30px;
+
+				color: $blue;
+			}
+		}
+		.overlay__footer {
+			max-width: 600px;
+			width: 100%;
+			margin: 0 auto 0 -10px;
+		}
+		ol.steps {
+			$line_height: 14px;
+			$padding: 3px;
+			$arrow_size: ($line_height + 2 * $padding)/2;
+			$max_li: 5;
+
+			padding: 0;
+			list-style-type: none;
+			display: flex;
+			flex-direction: column;
+			counter-reset: li;
+			max-width: 300px;
+			width: 100%;
+			margin: 0 auto;
+
+			li {
+				flex: 1 0 auto;
+				margin-left: 0;
+				text-align: center;
+				color: $white;
+				background: $blue;
+				position: relative;
+				margin-left: 20px + 2 * $arrow_size;
+				margin-bottom: 4px;
+
+				// Appended arrow.
+				&:after {
+					position: absolute;
+					top: 50%;
+					left: 100%;
+					content: " ";
+					height: 0;
+					width: 0;
+					pointer-events: none;
+					border: solid transparent;
+					border-left-color: $blue;
+					border-width: $arrow_size + 4px;
+					margin-top: -$arrow_size - 4px;
+				}
+
+				> a {
+					margin-left: -10px;
+					color: $white;
+					display: block;
+					@include font-size(14);
+					padding: 0 6px 3px 0;
+					text-decoration: none;
+
+					// Prepended arrow inset.
+					&:after {
+						position: absolute;
+						top: 50%;
+						right: 100%;
+						content: " ";
+						height: 0;
+						width: 0;
+						pointer-events: none;
+						border: solid $blue;
+						border-left-color: transparent;
+						border-width: $arrow_size + 4;
+						margin-top: -$arrow_size - 4;
+					}
+				}
+				&.is-active {
+					color: white;
+					background: $green;
+
+					// Appended arrow.
+					&:after {
+						border-left-color: $green;
+					}
+
+					> a {
+						color: white;
+
+						&:before {
+							color: $green;
+						}
+						// Prepended arrow.
+						&:after {
+							border-color: $green;
+							border-left-color: transparent;
+							color: $green;
+						}
+					}
+				}
+			}
+			// For the overlapping to work, later LIs must have a lower z-index.
+			@for $i from 1 through $max_li {
+				li.step#{$i} {
+					z-index: $max_li - $i;
+				}
+			}
+		}
+		.overlay__close {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			height: 150px;
+			background: linear-gradient(to top,  rgba(255,255,255,1) 30%,rgba(255,255,255,0) 100%);
+		}
+
+		.overlay__close .close {
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			background-color: $blue;
+			color: $white;
+			border-radius: 50%;
+
+			cursor: pointer;
+
+			transition: transform $speed ease;
+
+			&:hover {
+				transform: rotate(180deg);
+			}
+		}
+
+		@include bp(md) {
+			height: 100%;
+			padding: 0;
+			overflow: auto;
+			justify-content: center;
+			padding: 40px;
+
+			.overlay__navigation {
+				display: flex;
+				justify-content: space-between;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				right: 0;
+
+				a {
+					@include font-size(40);
+					text-decoration: none;
+
+					&:focus {
+						outline: none;
+					}
+				}
+			}
+
+			.overlay__content {
+				margin: 0 auto 60px;
+			}
+
+			ol.steps {
+				flex-direction: row;
+				max-width: 100%;
+
+				li {
+					margin-bottom: 0;
+				}
+			}
+
+			.overlay__close {
+				position: relative;
+				order: 1;
+				height: auto;
+				margin-bottom: 50px;
+			}
+			.overlay__header,
+			.overlay__content,
+			.overlay__footer {
+				order: 2;
+			}
+
+			.overlay__footer {
+				margin: 0 auto;
+			}
+
+
+			@include bp(xl) {
+				padding: 40px;
+
+				.overlay__close {
+					margin-bottom: 50px;
+				}
+			}
+		}
+	}
+}
+
+.section--results {
+	height: auto;
+
+	color: $black;
+
+	.results {
+		display: flex;
+		flex-flow: row wrap;
+		max-width: 1000px;
+		width: 100%;
+		margin-top: 35px;
+		padding-left: 15px; // Only 15 because there is a gutter on the results
+		padding-right: 15px; // -||-
+
+		.result .result__content {
+			height: 85px;
+		}
+		.result:nth-of-type(odd) .result__content {
+			height: 170px;
+		}
+		.result:nth-of-type(5) {
+			margin-top: -85px; // Makes the grid work without fancy masonry stuff
+		}
+
+		.result:nth-of-type(1) .result__content {
+			height: 85px;
+		}
+
+		// Hiding results from mobile
+		.result:nth-of-type(2),
+		.result:nth-of-type(4) {
+			display: none;
+		}
+
+		.result {
+			flex: 1 0 auto;
+			width: 50%;
+
+			&__content {
+				position: relative;
+			}
+
+			&__overlay {
+				opacity: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				background-color: $green;
+
+				transition: opacity $speed ease;
+			}
+
+			.result__content:hover {
+				.result__overlay {
+					opacity: 1;
+				}
+			}
+		}
+
+		.result__content {
+			margin: 5px;
+
+			background-position: 50%;
+			background-size: cover;
+		}
+
+		@include bp(md) {
+			margin-top: 60px;
+			padding-left: 0;
+			padding-right: 0;
+
+			.result {
+				flex: 1 0 33.3333%;
+			}
+			.result .result__content {
+				height: 175px;
+			}
+			.result:nth-of-type(odd) .result__content {
+				height: 350px;
+			}
+			.result:nth-of-type(5) {
+				margin-top: -175px; // Makes the grid work without fancy masonry stuff
+			}
+			.result:nth-of-type(2),
+			.result:nth-of-type(4) {
+				display: block;
+			}
+
+			.result__content {
+				margin: 10px;
+			}
+		}
+	}
+}
+
+
+.section--packages {
+	position: relative;
+	overflow: hidden;
+}
+.packages {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.packages__header,
+.packages__footer,
+.packages__body {
+	width: 100%;
+	padding: 0 20px;
+
+	@include bp(md) {
+		max-width: 940px;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+.packages__header {
+	display: flex;
+	flex-direction: column;
+	margin-top: 40px;
+
+	@include bp(md) {
+		flex-direction: row;
+		margin-top: 60px;
+	}
+}
+
+.packages__body {
+
+}
+
+.packages__footer {
+	display: none;
+
+	@include bp(md) {
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+
+		text-align: center;
+
+		a.oat {
+			@include font-size(15);
+			font-weight: $weight-bold;
+
+			color: $grey-packages;
+
+			text-decoration: none;
+		}
+		.button {
+			margin-top: 30px;
+			align-self: center;
+		}
+	}
+}
+
+.package {
+	position: relative;
+
+	font-family: $font-header;
+	font-weight: $weight-bold;
+	text-transform: uppercase;
+	text-align: center;
+
+	background-color: $blue;
+
+	transition: background-color $speed ease;
+
+	&:hover {
+		background-color: $blue-light;
+	}
+
+	&:not(:last-of-type) {
+		margin-bottom: 20px;
+	}
+
+	&:after {
+		content: '›';
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 30px;
+		padding-bottom: 4px;
+		position: absolute;
+		right: 0;
+		top: 0;
+
+		@include font-size(40);
+
+		background-color: $blue-dark;
+		color: $white;
+
+		pointer-events: none; // Make it possible to click through
+	}
+
+	.package__inner {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px 0;
+
+		text-decoration: none;
+	}
+
+
+	@include bp(md) {
+		flex: 1 0 33.3333%;
+
+		background-color: $white;
+
+		&:hover {
+			background-color: inherit;
+		}
+
+		&:not(:last-of-type) {
+			margin-bottom: 0;
+		}
+
+		&:after {
+			display: none;
+		}
+
+		.package__inner {
+			padding: 0;
+			margin: 0 10px;
+		}
+	}
+
+	.package__header {
+		@include bp(md) {
+			margin-bottom: 20px;
+		}
+	}
+
+	.package__body {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+
+		@include bp(md) {
+			padding: 50px 0;
+			background-color: $blue;
+
+			transition: background-color $speed ease;
+
+			&:hover {
+				background-color: $blue-light;
+			}
+		}
+	}
+
+	&__title,
+	&__price {
+		color: $white;
+	}
+
+	&__title, {
+		@include font-size(15);
+		line-height: 15px;
+
+		@include bp(md) {
+			color: $blue;
+		}
+	}
+
+	&__price {
+		margin-top: 10px;
+		margin-bottom: 10px;
+
+		@include font-size(27);
+		line-height: 27px;
+		font-weight: $weight-regular;
+
+		@include bp(md) {
+			margin-top: 0;
+			margin-bottom: 10px;
+
+			@include font-size(29);
+			line-height: 29px;
+		}
+	}
+
+	&__period {
+		@include font-size(15);
+		line-height: 15px;
+
+		color: $blue-light;
+
+		@include bp(md) {
+			@include font-size(13);
+			line-height: 13px;
+		}
+	}
+}
+
+// Packages seo
+.section--packages-seo {
+	padding-bottom: 60px;
+
+	@include bp(lg) {
+		padding-bottom: 80px;
+	}
+
+	.packages__header {
+		align-items: center;
+		@include bp(md) {
+			justify-content: space-between;
+		}
+	}
+
+	.package {
+		width: 25%;
+		min-width: 150px;
+		min-height: 190px;
+		height: 100%;
+		flex: 0 0 25%;
+
+		background-color: transparent;
+
+		&:after {
+			content: none;
+		}
+
+		&__body {
+			position: relative;
+			height: 0;
+			padding-top: 100%;
+			padding-bottom: 0;
+
+			background-color: $red;
+
+			border-radius: 50%;
+
+			&:hover {
+				background-color: darken($red, 10%);
+			}
+		}
+
+		&__content {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			width: 100%;
+		}
+
+		&__title {
+			margin-bottom: 5px;
+
+			font-family: $font-body;
+			@include font-size(14);
+			letter-spacing: 3px;
+
+			color: $red-light;
+
+			@include bp(md) {
+				margin-bottom: 20px;
+			}
+			@include bp(lg) {
+				margin-bottom: 30px;
+			}
+		}
+
+		&__price {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 5px;
+
+			@include font-size(40);
+
+			@include bp(md) {
+				margin-bottom: 10px;
+
+				@include font-size(60);
+			}
+			@include bp(lg) {
+				margin-bottom: 20px;
+			}
+
+			.label {
+				display: block;
+				padding: 5px 5px;
+				margin-right: 10px;
+
+				font-family: $font-body;
+				@include font-size(12);
+				font-weight: $weight-bold;
+				line-height: 1;
+				letter-spacing: 1.5px;
+
+				color: $red;
+				background-color: $white;
+
+				border-radius: 3px;
+
+				@include bp(md) {
+					@include font-size(14);
+				}
+			}
+		}
+		&__unit {
+			font-family: $font-body;
+			@include font-size(12);
+			letter-spacing: 3px;
+
+			color: $white;
+
+			@include bp(md) {
+				@include font-size(14);
+			}
+		}
+	}
+
+	.packages__overlay {
+		.package__price {
+			color: $red;
+			justify-content: flex-start;
+		}
+		.close {
+			background-color: $red;
+		}
+		.label {
+			display: block;
+			margin-top: 10px;
+			margin-left: 5px;
+
+			color: $white;
+			background-color: $red;
+		}
+
+		.overlay__header {
+			a {
+				color: $red;
+			}
+		}
+		.overlay__content {
+			overflow: auto;
+		}
+	}
+
+	.process {
+		display: none;
+
+		margin-top: 40px;
+
+		@include bp(md) {
+			display: flex;
+			margin-top: 60px;
+		}
+
+		&__left {
+			width: 25%;
+			padding: 0 10px;
+
+			.process__bar {
+				background-color: $red;
+
+				&:after {
+					border-left-color: $red;
+				}
+			}
+		}
+
+		&__right {
+			width: 75%;
+			padding: 0 10px;
+
+			.process__bar {
+				background-color: $grey-packages;
+
+				&:after {
+					border-left-color: $grey-packages;
+				}
+			}
+		}
+
+		&__header,
+		&__footer {
+			width: 100%;
+
+			@include font-size(14);
+			text-align: center;
+			text-transform: uppercase;
+			letter-spacing: 3px;
+
+			color: $grey-packages-alt;
+		}
+
+		&__bar {
+			position: relative;
+
+			display: block;
+
+			width: calc(100% - 5px);
+			height: 10px;
+			margin: 10px 0;
+
+			&:before,
+			&:after {
+				content: "";
+
+				position: absolute;
+
+				display: block;
+
+				background-color: transparent;
+
+				border: solid transparent;
+				border-color: $white;
+				border-width: 5px;
+			}
+
+			&:before {
+				left: 0;
+
+				border-color: transparent;
+
+				border-left-color: $white;
+			}
+
+			&:after {
+				left: 100%;
+			}
+		}
+	}
+}
+
+.section--premium {
+	position: relative;
+	padding-bottom: 60px;
+
+	.section--arrow {
+		position: absolute;
+		top: -30px;
+		left: 0;
+		right: 0;
+
+		width: 60px;
+		height: 60px;
+		padding: 15px 20px;
+		margin: 0 auto;
+
+		background-color: $grey-alt;
+
+		border-radius: 50%;
+	}
+
+	.whale {
+		color: $red;
+	}
+
+	p {
+		color: $grey-premium;
+	}
+
+	@include bp(lg) {
+		padding-bottom: 80px;
+	}
+	@include bp(xl) {
+		padding-bottom: 100px;
+	}
+}
+
+
+// TODO: Move this to elements
+// Colors
+// color-attribute is only used if different from main element color
+%blue {
+	background-color: $blue;
+}
+%blue-dark {
+	background-color: $blue-dark;
+}
+
+%green {
+	background-color: $green;
+}
+%green-dark {
+	background-color: $green-dark;
+}
+
+// Used on text in and outside of blocks.
+%red {
+	background-color: $red;
+}
+%red-dark {
+	background-color: $red-dark;
+}
+
+%grey {
+	background-color: $grey;
+}
+%grey-alt {
+	background-color: $grey-alt;
+	color: $black;
+}
+%grey-alt-second {
+	background-color: $grey-alt-second;
+	color: $black;
+}
+
+%yellow {
+	background-color: $yellow;
+	color: $white;
+}
+%yellow-dark {
+	background-color: $yellow-dark;
+	color: $white;
+}
+
+/*
+* Appearance block modifiers
+* This is also where specific colors for elements inside blocks go
+*/
+.block {
+
+	&--blue {
+		@extend %blue;
+
+		&-transparent {
+			background-color: rgba($blue, .95);
+		}
+		.button--white,
+		.button--blue {
+			color: $blue;
+
+			&:visited {
+				color: $blue;
+			}
+		}
+
+		.faded {
+			color: $blue-light;
+		}
+
+	}
+	&--blue-dark {
+		@extend %blue-dark;
+
+		.button--white {
+			color: $blue-dark;
+		}
+
+		.button--outline {
+			color: $white;
+
+			&:hover {
+				color: $blue-dark;
+			}
+		}
+	}
+
+	&--green {
+		@extend %green;
+
+		&-transparent {
+			background-color: rgba($green, .95);
+		}
+		.button--blue {
+			color: $white;
+
+			&:visited {
+				color: $white;
+			}
+		}
+
+		.button--white {
+			color: $green;
+		}
+
+		.button--outline {
+			color: $white;
+
+			&:hover {
+				color: $green;
+			}
+		}
+
+		.faded {
+			color: $green-light;
+		}
+	}
+	&--green-dark {
+		@extend %green-dark;
+	}
+
+	&--red {
+		background-color: $red;
+
+		.button--white {
+			color: $red;
+		}
+
+		&-transparent {
+			background-color: rgba($red, .95);
+		}
+	}
+	&--red-dark {
+		@extend %red-dark;
+
+		.button--white {
+			color: $red-dark;
+		}
+
+		.button--outline {
+			color: $white;
+
+			&:hover {
+				color: $red-dark;
+			}
+		}
+	}
+	&--yellow {
+		@extend %yellow;
+
+		.button--white {
+			color: $yellow;
+		}
+		.button--outline {
+			color: $white;
+		}
+	}
+	&--yellow-dark {
+		@extend %yellow-dark;
+
+		.button--white {
+			color: $yellow-dark;
+		}
+
+		.button--outline {
+			color: $white;
+
+			&:hover {
+				color: $yellow-dark;
+			}
+		}
+	}
+
+	&--grey {
+		@extend %grey;
+
+		&-transparent {
+			background-color: rgba($grey, .95);
+		}
+	}
+	&--grey-alt {
+		@extend %grey-alt;
+	}
+}
+
+
+// Only for test page!
+.page-template-page-test .section--grid:not(.section--grid-big) .block {
+	height: 600px;
+}

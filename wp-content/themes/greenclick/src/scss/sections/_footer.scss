@@ -1,0 +1,176 @@
+/*-----------------------------------*\
+  Footer
+\*-----------------------------------*/
+
+.site-footer {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding-bottom: 40px; // Making room for Health button
+
+    background-color: $white;
+
+    @include bp(md) {
+        padding-bottom: 0;
+    }
+}
+
+.site-footer .site-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    height: 200px;
+    margin: 0 auto;
+    padding-top: 40px;
+
+    border-top: 1px solid rgba($grey, .15);
+
+    .navigation {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    @include bp(lg) {
+        padding-top: 0;
+        height: 160px;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .navigation {
+            flex: 1 0 auto;
+            width: auto;
+        }
+    }
+}
+
+.navigation--footer {
+    flex-direction: column;
+
+    ul li a {
+        color: $black;
+    }
+    &__primary {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+
+        ul li a,
+        p {
+            @include font-size(17);
+
+            color: $grey;
+        }
+
+        ul {
+            width: 100%;
+            justify-content: center;
+        }
+
+        ul li:nth-of-type(-n+2) a {
+            margin-right: 25px;
+        }
+        ul li:nth-of-type(n+4) a {
+            display: none;
+        }
+
+        p,
+        p > a {
+            color: $green;
+        }
+    }
+    &__secondary {
+        display: none;
+        align-items: center;
+
+        p {
+            margin-right: 20px;
+
+            @include font-size(15);
+
+            color: $grey-light;
+        }
+
+        ul li:not(:last-child) a {
+            margin-right: 20px;
+        }
+        ul li a {
+            @include font-size(15);
+
+            color: $grey-light;
+        }
+    }
+
+    &-secondary {
+        flex-wrap: wrap;
+        .language-select {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 20px;
+            a {
+                &:after {
+                    content: none;
+                }
+                @include bp(sm) {
+                    margin-right: 20px;
+                }
+            }
+            img {
+                width: 24px;
+                height: 24px;
+                margin-left: 5px;
+            }
+            @include bp(sm) {
+                width: auto;
+                margin-bottom: 0;
+            }
+        }
+
+        ul li a {
+            color: $grey-light;
+        }
+
+        @include bp(sm) {
+            flex-wrap: nowrap;
+        }
+    }
+    @include bp(lg) {
+        &__primary {
+            margin-bottom: 0;
+            flex-direction: row;
+
+            ul {
+                width: auto;
+                justify-content: flex-start;
+            }
+
+            ul li a {
+                margin-right: 25px;
+            }
+            ul li:nth-of-type(n+4) a {
+                display: flex;
+            }
+        }
+
+        &__secondary {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
+
+.site-info > .navigation {
+    flex: 1;
+}
+
+.navigation--footer-secondary {
+    align-items: center;
+    justify-content: center;
+
+    @include bp(lg) {
+        justify-content: flex-end;
+    }
+}

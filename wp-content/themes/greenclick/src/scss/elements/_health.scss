@@ -1,0 +1,28 @@
+/*-----------------------------------*\
+Health button
+\*-----------------------------------*/
+.health {
+	position: fixed;
+	bottom: 20px;
+	left: 0;
+	right: 0;
+	display: flex;
+	align-items: flex-end;
+
+	z-index: 200;
+
+	transform: translateY(100px);
+	transition: transform .5s ease;
+
+	.button {
+		margin: 0 auto;
+	}
+
+	&.is-active {
+		transform: translateY(0);
+	}
+
+	@include bp(md) {
+		display: none;
+	}
+}

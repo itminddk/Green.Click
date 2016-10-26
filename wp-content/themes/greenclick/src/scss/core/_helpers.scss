@@ -1,0 +1,102 @@
+/*-----------------------------------*\
+  Mixins
+\*-----------------------------------*/
+
+$breakpoints: (
+    'sm'  : 544px,
+  	'md'  : 768px,
+ 	'lg'  : 992px,
+ 	'xl'  : 1200px,
+    'hg'  : 1380px
+);
+
+@mixin bp($breakpoint) {
+	$value: map-get($breakpoints, $breakpoint);
+
+	@if $value != null {
+	    @media (min-width: $value) {
+	        @content;
+	    }
+	}
+	@else {
+	    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+	        + "Please make sure it is defined in `$breakpoints` map.";
+	}
+}
+
+@mixin font-size($sizeValue: 1.6) {
+    font-size: ($sizeValue * 1) + px;
+    font-size: ($sizeValue / 10) + rem;
+}
+
+/*-----------------------------------*\
+  Variables
+\*-----------------------------------*/
+
+// Font
+$font-header: 'Roboto Mono', serif;
+$font-body: 'Roboto', Helvetica, sans-serif;
+$font-icons: 'greenclick';
+
+$weight-light: 300;
+$weight-regular: 400;
+$weight-bold: 500;
+
+// Color - General
+$white: #ffffff;
+$black: #010101;
+
+// Color - Main
+$green: #24a854;
+$blue: #0e4194;
+$red: #E9453A;
+$yellow: #FFA729;
+
+$grey: #464e54;
+$orange: #ff6e00;
+
+// Color - Light
+$green-light: #4dd27e;
+$blue-light: #4f78bd;
+$red-light: #ff9089;
+$yellow-light: #ffd69a;
+
+$grey-light: #a2a6a9;
+
+// Color - Dark
+$green-dark: #0f7e3e;
+$blue-dark: #113b7e;
+$red-dark: #D94136;
+$yellow-dark: #F09F28;
+
+$health: #a52017;
+
+$landing-form: #DB3235;
+
+
+// Color - Alternatives
+$grey-alt: #f2f2f2;
+$grey-alt-second: #fbfafb;
+
+
+
+// Color - Specials, probably only used once
+$grey-border: #e2e2e2;
+$grey-bg: #e0e0e0;
+$grey-packages: #858b8f;
+$grey-packages-alt: #626c77;
+$grey-premium: #54575e;
+
+$grey-landing-bg: #E5E5E5;
+$grey-landing-border: #CFCFCF;
+
+
+// Social
+$twitter: #63cdf1;
+$facebook: #507cbe;
+$linkedin: #90cadd;
+
+
+// Elements
+$speed: 300ms;
+$border-radius: 22px;

@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule    ^([A-Za-z0-9-]+)/?$     order-confirm-new.php?id=$1    [NC,L]    # Handle product requests

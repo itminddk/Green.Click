@@ -1,0 +1,11 @@
+input.gcm-form-field-text.gcm-form-ad-group, input.gcm-form-field-text.gcm-form-landing-page {
+    margin-bottom: 5px;
+}
+
+div.gcm-form-ad-landing-entry-wrapper {
+    margin-bottom: 12px;
+}
+
+div.gcm-form-ad-landing-entry-wrapper:first-child {
+    margin-bottom: 30px;
+}

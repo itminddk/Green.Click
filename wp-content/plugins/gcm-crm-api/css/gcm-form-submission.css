@@ -1,0 +1,270 @@
+div.gcm-form-field-wrapper {
+    clear: both;
+    margin-bottom: 10px;
+}
+
+div.gcm-form-field {
+    float: left;
+    width: 60%;
+}
+
+div.gcm-form-field-description {
+    float: left;
+    margin-left: 3%;
+    width: 37%;
+    min-height: 50px;
+    background-color: #F4F4CE;
+    border: 1px solid #F4F4CE;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    padding: 5px 10px 5px 10px;
+    color: #454545;
+}
+
+h4.gcm-form-field-label {
+	font-size: 18px;
+	font-family: 'proxima_nova_rgbold';
+	font-weight: normal;
+	line-height: 25px;
+}
+
+h3 {
+	margin: 0;
+	padding: 0;
+	font-family: 'geogrotesqueregular';
+	font-size: 25px;
+	color: #454545;
+	line-height: 20px;
+}
+
+.gcm-form-field-select, .gcm-form-field-text, .gcm-form-field-email {
+    width: 100%;
+}
+
+#gcm-form-pager {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+}
+
+#gcm-form-pager #gcm-form-page-text, #gcm-form-pager #gcm-form-page-numbers {
+    display: inline-block;
+    font-size: 24px;
+}
+
+.gcm-form-page {
+	margin-right: 100px;
+}
+
+#gcm-form-controls .previous {
+    float: left;
+    width: 50%;
+    text-align: right;
+    padding-right: 15px;
+}
+
+#gcm-form-controls .next {
+    float: left;
+    width: 50%;
+    padding-left: 15px;
+}
+
+#gcm-form-submit {
+    float: left;
+    width: 50%;
+    display: none;
+}
+
+span.gcm-form-field-validation-error, .gcm-form-field-label span.gcm-form-field-required {
+    color: #f00;
+}
+
+#gcm-form-validation, #gcm-form-error {
+    display: none;
+}
+
+div.gcm-form-extra-bottom {
+    clear: both;
+}
+
+div.gcm-form-field-error {
+    clear: both;
+    height: 30px;
+}
+
+div.gcm-form-field-error-text-wrapper {
+    display: none;
+}
+
+#gcm-form-feedback div {
+    display: none;
+}
+
+/***** Field types *****/
+
+
+/*
+ * Radio buttons and checkboxes
+ *
+ * @see http://www.hongkiat.com/blog/css3-checkbox-radio/
+ */
+input.gcm-form-radio, input.gcm-form-checkbox {
+    display: none;
+}
+
+.gcm-form-option-label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.gcm-form-option-label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    border: 2px solid #ddd;
+}
+
+input[type="radio"] ~ .gcm-form-option-label:before {
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+}
+
+input.gcm-form-radio:checked + .gcm-form-option-label:before {
+    content: "\2022";
+    color: #77ab6f;
+    font-size: 32px;
+    text-align: center;
+    line-height: 12px;
+}
+
+input.gcm-form-checkbox:checked + .gcm-form-option-label:before {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #77ab6f;
+    text-align: center;
+    line-height: 15px;
+}
+
+/* Text, email and textarea */
+input, textarea {
+	outline: none;
+}
+
+textarea {
+	resize:none;
+}
+
+input:focus, textarea:focus {
+	outline: none;
+	border-color: #ddd !important;
+}
+
+input.gcm-form-field-text, input.gcm-form-field-email, .gcm-form-field-textarea {
+    padding: 13px;
+    border: 3px solid #ddd;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    color: #454545;
+}
+
+.gcm-form-field-textarea {
+    width: 100%;
+    min-height: 110px;
+}
+
+/* Select */
+div.gcm-form-select-wrapper {
+    height: 50px;
+    overflow: hidden;
+    border: 3px solid #ebede8;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    border-radius: 7px;
+    position: relative;
+}
+
+div.gcm-form-select-caret-wrapper {
+    width: 50px;
+    height: 50px;
+    border-left: 3px solid #ebede8;
+    position: absolute;
+    right: 0;
+    z-index: -9000;
+}
+
+div.gcm-form-select-caret {
+    width: 0;
+    height: 0;
+    margin: 20px 0 0 13px;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #ebede8 transparent transparent transparent;
+}
+
+select.gcm-form-field-select {
+    height: 50px;
+    background: transparent;
+    padding: 10px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    outline : none;
+    overflow : hidden;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    text-indent: 0.01px;
+    text-overflow: '';
+}
+
+select.gcm-form-field-select::-ms-expand {
+    display: none;
+}
+
+/* Control buttons */
+#gcm-form-controls button, #gcm-form-controls input[type="submit"] {
+    color: #FFFFFF;
+    padding: 5px 15px 5px 15px;
+    height: 40px;
+    border-top: none;
+    border-left: none;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+#gcm-form-controls .next button, #gcm-form-submit-button {
+    background-color: #75ab6c;
+    border-bottom: 2px solid #64915c;
+    border-right: 2px solid #64915c;
+}
+
+#gcm-form-submit-button {
+    font-weight: 900;
+}
+
+#gcm-form-controls .previous button {
+    background-color: #454545;
+    border-bottom: 2px solid #3b3b3b;
+    border-right: 2px solid #3b3b3b;
+}
+
+#gcm-form-controls .loading {
+    background-image: url('../images/ajax-loader.gif') !important;
+    background-repeat: no-repeat;
+    background-position: 10px 50%;
+}

@@ -1,0 +1,245 @@
+/*-----------------------------------*\
+  Typography
+\*-----------------------------------*/
+
+// Typekit fixer
+.wf-loading {
+    visibility: hidden;
+}
+.wf-active, .wf-inactive {
+    visibility: visible;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-family: $font-body;
+    @include font-size(18);
+	line-height: 25px;
+
+    color: $black;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+
+    font-family: $font-header;
+    font-weight: $weight-regular;
+
+	clear: both;
+
+    // This interferes with headlines all over, and should not!
+    // text-overflow: ellipsis;
+	// overflow: hidden;
+
+    &.whale { // Also default h1
+        @include font-size(27);
+        line-height: 37px;
+
+        &--green {
+            color: $green;
+        }
+
+        @include bp(md) {
+            @include font-size(33);
+            line-height: 43px;
+        }
+        @include bp(xl) {
+            @include font-size(40);
+            line-height: 50px;
+        }
+    }
+    &.elephant {
+        font-family: $font-body;
+        @include font-size(21);
+        line-height: 27px;
+
+        @include bp(xl) {
+            @include font-size(27);
+            line-height: 33px;
+        }
+    }
+}
+
+.wheat {
+    @include font-size(15);
+    line-height: 21px;
+
+    @include bp(md) {
+        @include font-size(17);
+        line-height: 24px;
+    }
+    @include bp(xl) {
+        @include font-size(18);
+        line-height: 25px;
+    }
+}
+.oat {
+    @include font-size(15);
+    line-height: 21px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+
+    @include bp(xl) {
+        @include font-size(17);
+        line-height: 23px;
+    }
+}
+
+.subtitle {
+	font-family: $font-header;
+	font-weight: $weight-bold;
+
+	@include font-size(15);
+
+	&:after {
+		margin: 30px auto;
+		display: flex;
+		content: '';
+		width: 100px;
+		height: 2px;
+	}
+
+	&--blue {
+		&:after {
+			background-color: $blue;
+		}
+	}
+	&--green {
+		&:after {
+			background-color: $green;
+		}
+	}
+	&--red {
+		&:after {
+			background-color: $red;
+		}
+	}
+	&--yellow {
+		&:after {
+			background-color: $yellow;
+		}
+	}
+}
+
+
+h1 {
+    @include font-size(27);
+    line-height: 37px;
+
+    @include bp(md) {
+        @include font-size(33);
+        line-height: 43px;
+    }
+    @include bp(xl) {
+        @include font-size(40);
+        line-height: 50px;
+    }
+}
+
+p {
+    margin: 0;
+	margin-bottom: 30px;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    @include font-size(15);
+    line-height: 21px;
+
+    @include bp(md) {
+        @include font-size(17);
+        line-height: 24px;
+    }
+    @include bp(xl) {
+        @include font-size(18);
+        line-height: 25px;
+    }
+}
+
+strong {
+    font-weight: $weight-bold;
+}
+
+dfn,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	margin: 0;
+
+    font-family: $font-header;
+    @include font-size(15);
+    line-height: 21px;
+
+    cite {
+        display: block;
+
+        font-family: $font-body;
+        @include font-size(10);
+        line-height: 18px;
+        font-weight: $weight-bold;
+        font-style: normal;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    @include bp(md) {
+        @include font-size(21);
+        line-height: 29px;
+
+        cite {
+            margin-top: 20px;
+
+            @include font-size(15);
+            line-height: 21px;
+        }
+    }
+}
+
+a {
+	color: $blue;
+}
+
+a:visited {
+	color: $blue;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: $blue;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a[href^=tel] {
+    color: $white;
+    text-decoration: none;
+}

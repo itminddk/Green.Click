@@ -1,0 +1,205 @@
+/*-----------------------------------*\
+  Elements
+\*-----------------------------------*/
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $grey-bg;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+}
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+hr {
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+ul,
+ol {
+	margin: 0 0 30px;
+	padding: 0;
+
+	font-family: $font-header;
+}
+
+ul {
+	list-style: none;
+}
+ul li:before {
+	content: '•';
+	margin-right: 5px;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
+}
+
+img {
+	display: block; // Fixes extra spacing in bottom.
+	height: auto; // Make sure images are scaled correctly.
+	max-width: 100%; // Adhere to container width.
+}
+
+table {
+	margin: 0 0 1.5em;
+	width: 100%;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+
+
+ul.social-icons {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+
+	li {
+		display: flex;
+	}
+
+	li:not(:last-child) {
+		margin-right: 20px;
+	}
+
+	.icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+
+		@include font-size(15);
+
+		color: $white;
+		background-color: $grey-light;
+		border-radius: 50%;
+	}
+	.icon-play {
+		padding-left: 3px; // It's a triangle. Triangles are stupid.
+		@include font-size(10);
+	}
+
+	@include bp(md) {
+		.icon {
+			@include font-size(20);
+		}
+		.icon-play {
+			@include font-size(15);
+		}
+	}
+}
+
+
+// SVG-specific classes
+.svg-premium {
+	max-width: 145px;
+	width: 145px;
+}
+.svg-premium-browser {
+	max-width: 280px;
+	width: 280px;
+
+	@include bp(md) {
+		max-width: 800px;
+	}
+}
+
+
+// Bootstrap 4 hiding classes
+.hidden-xs-up {
+  display: none !important;
+}
+
+@media (max-width: 543px) {
+  .hidden-xs-down {
+    display: none !important;
+  }
+}
+
+@include bp(sm) {
+  	.hidden-sm-up {
+    	display: none !important;
+  	}
+}
+
+@media (max-width: 767px) {
+  .hidden-sm-down {
+    display: none !important;
+  }
+}
+
+@include bp(md) {
+  	.hidden-md-up {
+    	display: none !important;
+  	}
+}
+
+@media (max-width: 991px) {
+  .hidden-md-down {
+    display: none !important;
+  }
+}
+
+@include bp(lg) {
+	.hidden-lg-up {
+    	display: none !important;
+  	}
+}
+
+@media (max-width: 1199px) {
+  .hidden-lg-down {
+    display: none !important;
+  }
+}
+
+@include bp(xl) {
+  	.hidden-xl-up {
+    	display: none !important;
+  	}
+}
+
+.hidden-xl-down {
+  display: none !important;
+}
