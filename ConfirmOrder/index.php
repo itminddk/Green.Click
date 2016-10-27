@@ -31,14 +31,15 @@
     .order td{ height: 30px;}
   </style>
 			  <?php
+              //http://svn.crmtest.dk:8483
 
     function get_json($api_url, $hash_code){
-        $ch = curl_init('https://gcmcrm.azurewebsites.net/api/Orders/action.Confirm');
+        $ch = curl_init('http://svn.crmtest.dk:8483/api/Orders/action.Confirm');
     }
 
     function get_invoice_data($hash_code){
-				$url = 'http://gcmcrm.azurewebsites.net/api/Publics(\''.$hash_code .'\')/action.InvoiceData';
-        $ch = curl_init('http://gcmcrm.azurewebsites.net/api/Publics(\''.$hash_code .'\')/action.InvoiceData');
+				$url = 'http://svn.crmtest.dk:8483/api/Publics(\''.$hash_code .'\')/action.InvoiceData';
+        $ch = curl_init('http://svn.crmtest.dk:8483/api/Publics(\''.$hash_code .'\')/action.InvoiceData'http://svn.crmtest.dk:8483/api/Publics(\''.$hash_code .'\')/action.InvoiceData');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                 'Content-Type: application/json',
@@ -94,7 +95,7 @@
     $clientIpTest   = "172.0.0.1";
 	  $user_agent			= $_SERVER['HTTP_USER_AGENT'];;
     ## CloudFlare.com vars!
-    $api_url        = "http://gcmcrm.azurewebsites.net/api/";
+    $api_url        = "http://svn.crmtest.dk:8483/api/";
     $id             = "";
     $hashCode       = "";
     $result         = "";
@@ -105,7 +106,7 @@
 		$error_stat			= FALSE;
 		$test_merchant_no = "8012702";
 		$live_merchant_no = "6218857";	
-		$merchant_no			= $live_merchant_no;
+		$merchant_no			= test_merchant_no;
 			
 			if(strstr(strtolower($_SERVER['HTTP_USER_AGENT']), "googlebot"))
 			{
@@ -119,12 +120,12 @@
 
 
     if(isset($_GET["id"])){
-        $url = 'http://gcmcrm.azurewebsites.net/api/Publics(\''. $hashCode .'\')/action.InvoiceData';
+        $url = 'http://svn.crmtest.dk:8483/api/Publics(\''. $hashCode .'\')/action.InvoiceData';
 				$data = array("Hashcode" => $hashCode, "IP" => $clientIp);
 
         $data_string = json_encode($data);
 
-        $ch = curl_init('https://gcmcrm.azurewebsites.net/api/Orders/action.Confirm');
+        $ch = curl_init('http://svn.crmtest.dk:8483/api/Orders/action.Confirm');
         curl_setopt($ch, CURLOPT_POST, 1);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
