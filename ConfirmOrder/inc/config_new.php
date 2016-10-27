@@ -32,13 +32,13 @@ $error_email        = "jan@greenclickmedia.dk";
 ## Epay
 $test_merchant_no   = "8012702";
 $live_merchant_no   = "6218857";
-$merchant_no		= $live_merchant_no;
+$merchant_no		= $test_merchant_no;
 
 
 ## SERVER URL
 $live_server_url	= 'https://gcmcrm.azurewebsites.net';
 $test_server_url	= 'http://svn.crmtest.dk:8483';
-$host				= $live_server_url;
+$host				= $test_server_url;
 
 ## VARS
 $order_hash_code	= FALSE;
