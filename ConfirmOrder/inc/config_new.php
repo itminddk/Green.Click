@@ -18,8 +18,8 @@ if (isset($_SERVER["HTTP_CF_CONNECTING_IP"])) {
 ## Vars
 $debug               = 0;
 $user_agent		      = $_SERVER['HTTP_USER_AGENT'];;
-$api_url            = "http://gcmcrm.azurewebsites.net/api/";
-$api_confirm_url    = "https://gcmcrm.azurewebsites.net/api/Orders/action.Confirm";
+$api_url            = "http://svn.crmtest.dk:8483/api/";
+$api_confirm_url    = "http://svn.crmtest.dk:8483/api/Orders/action.Confirm";
 $clientIp           = $_SERVER['REMOTE_ADDR'];
 $id                 = "";
 

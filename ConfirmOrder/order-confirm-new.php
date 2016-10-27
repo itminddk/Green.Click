@@ -14,7 +14,7 @@ else
 	$hash_code_length = strlen($order_hash_code);
 
 ## Test if hashcode has correct length
-if(strlen($order_hash_code) === 32){ //stupid
+if(strlen($order_hash_code) > 30){ //stupid
 
 	#confirm order and get invoice hash_code
 
